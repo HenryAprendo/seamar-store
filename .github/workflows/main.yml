@@ -39,7 +39,7 @@ jobs:
 
       # Route file renaming
       - name: Rename index for routing
-        run: mv dist/angular-poc/index.html dist/angular-poc/404.html
+        run: mv dist/seamar-store/index.html dist/seamar-store/404.html
 
       # Deploy to Github pages
       - name: Deploy to pages

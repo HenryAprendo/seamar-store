@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+
+
+  /* fonts */
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-base: 1.6rem;
+  --text-lg: 1.8rem;
+
+  /* whight */
+  --ligth-wgt: 300;
+  --normal: 400;
+  --semibold: 500;
+  --bold: 700;
+
+}
+
+
+
