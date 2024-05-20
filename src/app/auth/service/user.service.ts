@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { User, CreateUserDto } from '../interface/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { API_URL } from '../../constant/constant';
 
 @Injectable()
 export class UserService {

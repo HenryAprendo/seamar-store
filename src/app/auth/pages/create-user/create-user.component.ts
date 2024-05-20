@@ -39,9 +39,12 @@ export class CreateUserComponent implements OnInit {
     if(this.createForm.valid) {
 
       this.userService.save(data)
-        .subscribe(user => {
-          if(user) {
+        .subscribe({
+          next: user => {
             console.log(`User create: ${user.email} - role: ${user.role}`)
+          },
+          error: (err) => {
+            console.log(err)
           }
         })
 
