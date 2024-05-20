@@ -66,7 +66,6 @@
 
 .error_message {
   font-size: var(--text-xs);
-  /* color: #ff0f6e; */
   color: rgb(255, 0, 255);
   font-weight: var(--semibold);
 }

@@ -1,7 +1,7 @@
 <div class="container">
 
   <section class="content_main">
-    <form [formGroup]="createForm" class="form" >
+    <form [formGroup]="createForm" class="form" (ngSubmit)="saveUser()" >
 
       <header class="form_header">
         <div class="form_header_content">
@@ -43,7 +43,7 @@
       </div>
 
       <div class="form_content_button">
-        <button class="btn_submit" type="submit">Register user</button>
+        <button class="btn_submit" type="submit" [disabled]="createForm.invalid" >Register user</button>
       </div>
 
     </form>

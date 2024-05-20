@@ -1,25 +1,56 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
+
+import { UserService } from '../../service/user.service';
+import { CreateUserDto } from '../../interface/user.model';
 
 @Component({
   selector: 'app-create-user',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './create-user.component.html',
-  styleUrl: './create-user.component.css'
+  styleUrl: './create-user.component.css',
+  providers: [UserService]
 })
-export class CreateUserComponent {
+export class CreateUserComponent implements OnInit {
 
   private fb = inject(FormBuilder);
 
+  private userService = inject(UserService);
+
   createForm:FormGroup;
 
-  constructor(){
+  constructor() {
     this.createForm = this.buildForm();
   }
 
-  private buildForm(){
+  ngOnInit(): void {
+    this.userService.findAll().subscribe(dta => console.log(dta))
+  }
+
+  saveUser() {
+
+    let data: CreateUserDto = {
+      ...this.createForm.value,
+      role: 'admin'
+    };
+
+    if(this.createForm.valid) {
+
+      this.userService.save(data)
+        .subscribe(user => {
+          if(user) {
+            console.log(`User create: ${user.email} - role: ${user.role}`)
+          }
+        })
+
+    } else {
+      this.createForm.markAllAsTouched();
+    }
+  }
+
+  private buildForm() {
     return this.fb.group({
       email: ['',[Validators.required]],
       password: ['',[Validators.required]]
