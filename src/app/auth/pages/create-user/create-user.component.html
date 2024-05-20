@@ -1,1 +1,56 @@
-<p>create-user works!</p>
+<div class="container">
+
+  <section class="content_main">
+    <form [formGroup]="createForm" class="form" >
+
+      <header class="form_header">
+        <div class="form_header_content">
+          <h2 class="form_header_title">Sign up</h2>
+          <span class="form_header_icon" class="material-symbols-outlined">person</span>
+        </div>
+      </header>
+
+      <div class="form_controls">
+
+        <div class="control">
+          <div class="control_content">
+            <label class="control_label" for="email-address" >Email address</label>
+            <input class="control_input" id="email-address" name="email" type="email" formControlName="email" >
+          </div>
+          @if(emailFieldInvalid) {
+            <div class="control_content_error" >
+              @if(emailField?.hasError('required')) {
+                <p class="error_message"  >Este campo es requerido</p>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="control">
+          <div class="control_content">
+            <label class="control_label" for="password">Password</label>
+            <input class="control_input" id="password" name="password" type="password" formControlName="password" >
+          </div>
+          @if(passwordFieldInvalid) {
+            <div class="control_content_error">
+              @if(passwordField?.hasError('required')) {
+                <p class="error_message"  >Este campo es requerido</p>
+              }
+            </div>
+          }
+        </div>
+
+      </div>
+
+      <div class="form_content_button">
+        <button class="btn_submit" type="submit">Register user</button>
+      </div>
+
+    </form>
+  </section>
+
+  <section class="content_secondary">
+    <!-- imagen de creación de usuario -->
+  </section>
+
+</div>
