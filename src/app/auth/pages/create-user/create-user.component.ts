@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angula
 
 import { UserService } from '../../service/user.service';
 import { CreateUserDto } from '../../interface/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
@@ -19,6 +20,8 @@ export class CreateUserComponent implements OnInit {
 
   private userService = inject(UserService);
 
+  private router = inject(Router);
+
   createForm:FormGroup;
 
   constructor() {
@@ -26,7 +29,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.findAll().subscribe(dta => console.log(dta))
+
   }
 
   saveUser() {
@@ -41,7 +44,9 @@ export class CreateUserComponent implements OnInit {
       this.userService.save(data)
         .subscribe({
           next: user => {
-            console.log(`User create: ${user.email} - role: ${user.role}`)
+            if(user) {
+              this.router.navigate(['./auth/login']);
+            }
           },
           error: (err) => {
             console.log(err)

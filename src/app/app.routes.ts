@@ -3,8 +3,12 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'website',
     pathMatch: 'full'
+  },
+  {
+    path: 'website',
+    loadChildren: () => import('./website/website.routes'),
   },
   {
     path: 'auth',

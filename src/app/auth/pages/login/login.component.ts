@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../../service/auth.service';
 import { LoginUserDto } from '../../interface/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,8 @@ export class LoginComponent {
   private fb = inject(FormBuilder);
 
   private authService = inject(AuthService);
+
+  private router = inject(Router);
 
   loginForm: FormGroup;
 
@@ -32,7 +35,9 @@ export class LoginComponent {
       this.authService.login(email,password)
         .subscribe({
           next: response => {
-            console.log(response.access_token)
+            if(response.access_token) {
+              this.router.navigate(['/']);
+            }
           },
           error: err => {
             console.log(err)
