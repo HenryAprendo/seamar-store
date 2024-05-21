@@ -4,12 +4,12 @@ import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angula
 
 import { UserService } from '../../service/user.service';
 import { CreateUserDto } from '../../interface/user.model';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './create-user.component.html',
   styleUrl: './create-user.component.css',
   providers: [UserService]

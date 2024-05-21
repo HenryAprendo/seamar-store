@@ -32,6 +32,7 @@
 .form_header_title {
   font-size: var(--text-lg);
   font-weight: var(--semibold);
+  color: brown;
 }
 
 /* Controles */
@@ -98,6 +99,21 @@
 
 .btn_submit:hover {
   transform: scale(0.98);
+}
+
+.redirect {
+  font-size: var(--text-sm);
+  margin-top: 2rem;
+  font-weight: var(--semibold);
+}
+
+.redirect_link {
+  color: brown;
+}
+
+.redirect_link:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 640px) {
