@@ -7,7 +7,7 @@ export default [
     children: [
       {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'create-user',
         pathMatch: 'full',
       },
       {
