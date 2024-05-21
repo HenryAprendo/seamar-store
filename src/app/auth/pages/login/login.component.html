@@ -1,10 +1,10 @@
 <div class="content_main">
-  <form [formGroup]="createForm" class="form" (ngSubmit)="saveUser()" >
+  <form [formGroup]="loginForm" class="form" (ngSubmit)="logIn()" >
 
     <header class="form_header">
       <div class="form_header_content">
-        <h2 class="form_header_title">Sign up</h2>
-        <span class="form_header_icon" class="material-symbols-outlined">person</span>
+        <h2 class="form_header_title">Sign in</h2>
+        <span class="form_header_icon" class="material-symbols-outlined">account_circle</span>
       </div>
     </header>
 
@@ -13,7 +13,7 @@
       <div class="control">
         <div class="control_content">
           <label class="control_label" for="email-address" >Email address</label>
-          <input class="control_input" id="email-address" name="email" type="email" placeholder="username@gmail.com" formControlName="email" >
+          <input class="control_input" id="email-address" name="email" type="email" placeholder="username@gmail.com"  formControlName="email" >
         </div>
         @if(emailFieldInvalid) {
           <div class="control_content_error" >
@@ -41,7 +41,7 @@
     </div>
 
     <div class="form_content_button">
-      <button class="btn_submit" type="submit" [disabled]="createForm.invalid" >Register user</button>
+      <button class="btn_submit" type="submit" [disabled]="loginForm.invalid" >Login</button>
     </div>
 
   </form>

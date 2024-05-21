@@ -7,12 +7,16 @@ export default [
     children: [
       {
         path: '',
-        redirectTo: 'create-user',
+        redirectTo: 'login',
         pathMatch: 'full',
       },
       {
         path: 'create-user',
         loadComponent: () => import('./pages/create-user/create-user.component').then(m => m.CreateUserComponent),
+      },
+      {
+        path: 'login',
+        loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent),
       }
     ]
   }

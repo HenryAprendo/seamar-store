@@ -8,3 +8,6 @@ export interface User {
 
 export interface CreateUserDto extends Omit<User, 'id'> { };
 
+export interface LoginUserDto extends Omit<User, 'id'|'role'> {
+
+}
