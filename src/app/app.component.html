@@ -1,6 +1,29 @@
 <header>
   <h1>Seamar</h1>
+  <nav>
+    <ul>
+      @if(!userProfile){
+        <li>
+          <a routerLink="./auth/login">Login</a>
+        </li>
+      }
+
+      @if(userProfile) {
+        <li>
+          <a (click)="logout()" >Logout</a>
+        </li>
+        <li>
+          <a href="">Profile</a>
+        </li>
+        <li>
+          <a href="">{{userProfile.username}}</a>
+        </li>
+      }
+
+    </ul>
+  </nav>
 </header>
+
 <div>
   <router-outlet></router-outlet>
 </div>

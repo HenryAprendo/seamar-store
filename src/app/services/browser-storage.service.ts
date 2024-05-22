@@ -17,5 +17,9 @@ export class BrowserStorageService {
     this.storage.setItem(key,value);
   }
 
+  remove(key:string) {
+    this.storage.removeItem(key);
+  }
+
 
 }
