@@ -3,11 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'website',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
-    path: 'website',
+    path: '',
     loadChildren: () => import('./website/website.routes'),
   },
   {

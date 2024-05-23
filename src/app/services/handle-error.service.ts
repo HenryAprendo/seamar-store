@@ -10,10 +10,10 @@ export class HandleErrorService {
   handleErr() {
 
     let msg = {
-      unauthorized: 'Unauthorized user. Check if your email or password is correct.',
+      unauthorized: 'Unauthorized user. Check if your email or password is correct.',   //Usuario no autenticado.
       notFound: 'Resource not found.',
-      forbidden: 'Forbidden resource',
-      general: 'Oops a problem has occurred.'
+      forbidden: 'Forbidden resource',   //Recurso prohibido por ejemplo cuando no el rol del usuario no tiene permisos.
+      general: 'Oops a problem has occurred. The page is not available.'  //Cuando por ejemplo no se conecta al servidor.
     }
 
     return (error:HttpErrorResponse) => {
