@@ -7,29 +7,38 @@ import { throwError } from 'rxjs';
 })
 export class HandleErrorService {
 
-  constructor() { }
-
   handleErr() {
 
     let msg = {
       unauthorized: 'Unauthorized user. Check if your email or password is correct.',
       notFound: 'Resource not found.',
+      forbidden: 'Forbidden resource',
       general: 'Oops a problem has occurred.'
     }
 
     return (error:HttpErrorResponse) => {
-      if(error.status === HttpStatusCode.Unauthorized) {
-        return throwError(this.error(msg.unauthorized));
-      } else if(error.status === HttpStatusCode.NotFound) {
-        return throwError(this.error(msg.notFound));
-      } else  {
-        return throwError(this.error(msg.general));
+
+      switch(error.status) {
+
+        case HttpStatusCode.Unauthorized :
+          return this.throwErr(msg.unauthorized);
+
+        case HttpStatusCode.NotFound :
+          return this.throwErr(msg.notFound);
+
+        case HttpStatusCode.Forbidden :
+          return this.throwErr(msg.forbidden);
+
+        default:
+          return this.throwErr(msg.general);
+
       }
+
     }
   }
 
-  private error(msg:string){
-    return () => new Error(msg);
+  private throwErr(msg:string){
+    return throwError(() => new Error(msg));
   }
 
 }

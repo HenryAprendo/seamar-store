@@ -7,7 +7,7 @@ import { BrowserStorageService } from '../../services/browser-storage.service';
 import { TOKEN } from '../../config/storage';
 import { HandleErrorService } from '../../services/handle-error.service';
 import { Profile } from '../interface/profile.model';
-import { enableAuthFn } from '../../interceptors/auth.interceptor';
+import { contextAuthIntercept } from '../../interceptors/auth.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +36,10 @@ export class AuthService {
 
   getProfile(): Observable<Profile> {
     return this.http.get<Profile>(`${this.apiUrl}/profile`,{
-      context: enableAuthFn(),
+      context: contextAuthIntercept(),
     }).pipe(
-      tap(userProfile => this.emit(userProfile))
+      tap(userProfile => this.emit(userProfile)),
+      catchError(this.handle.handleErr()),
     )
   }
 

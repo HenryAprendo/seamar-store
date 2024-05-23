@@ -5,7 +5,7 @@ import { TOKEN } from '../config/storage';
 
 const AUTH_CONTEXT = new HttpContextToken<boolean>(() => false);
 
-export const enableAuthFn = () => {
+export const contextAuthIntercept = () => {
   return new HttpContext().set(AUTH_CONTEXT,true);
 }
 
