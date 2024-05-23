@@ -24,26 +24,32 @@
       <div class="header_right_container">
         <nav class="header_nav">
           <ul class="header_nav_list">
-            <li class="nav_item">
-              <a class="nav_item_link" href="">home</a>
+
+            <li class="nav_item" routerLink="./" >
+              <a class="nav_item_link">Home</a>
               <span class="nav_item_icon material-symbols-outlined">home</span>
             </li>
-            <li class="nav_item">
-              <a class="nav_item_link" href="">profile</a>
-              <span class="nav_item_icon material-symbols-outlined">account_box</span>
-            </li>
-            <li class="nav_item">
-              <a class="nav_item_link" href="">login</a>
-              <span class="nav_item_icon material-symbols-outlined">login</span>
-            </li>
-            <li class="nav_item">
-              <a class="nav_item_link" href="">logout</a>
-              <span class="nav_item_icon material-symbols-outlined">logout</span>
-            </li>
-            <li class="nav_item">
-              <a class="nav_item_link" href="">signup</a>
-              <span class="nav_item_icon material-symbols-outlined">how_to_reg</span>
-            </li>
+
+            @if(user()) {
+              <li class="nav_item">
+                <a class="nav_item_link" >Profile</a>
+                <span class="nav_item_icon material-symbols-outlined">account_box</span>
+              </li>
+              <li class="nav_item">
+                <a class="nav_item_link" >Logout</a>
+                <span class="nav_item_icon material-symbols-outlined">logout</span>
+              </li>
+            } @else {
+              <li class="nav_item" routerLink="./auth/login" >
+                <a class="nav_item_link">Sign in</a>
+                <span class="nav_item_icon material-symbols-outlined">login</span>
+              </li>
+              <li class="nav_item" routerLink="./auth/create-user" >
+                <a class="nav_item_link" >Sign up</a>
+                <span class="nav_item_icon material-symbols-outlined">how_to_reg</span>
+              </li>
+            }
+
           </ul>
         </nav>
       </div>

@@ -12,22 +12,9 @@ import { HeaderNavComponent } from './components/header-nav/header-nav.component
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   title = 'seamar-store';
-
-  private authService = inject(AuthService);
-
-  userProfile:Profile|null = null;
-
-  ngOnInit(): void {
-    this.authService.profile$
-      .subscribe(profile => this.userProfile = profile);
-  }
-
-  logout(){
-    this.authService.logout();
-  }
 
 
 }

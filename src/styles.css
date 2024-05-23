@@ -12,4 +12,15 @@ body {
   max-width: 128rem;
   margin: 0 auto;
   min-height: 100vh;
+  padding: 0 1rem;
 }
+
+@media screen and (min-width: 1024px) {
+
+  body {
+    padding: 0;
+  }
+
+}
+
+
