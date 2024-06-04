@@ -14,14 +14,28 @@ html {
   --text-sm: 1.4rem;
   --text-base: 1.6rem;
   --text-lg: 1.8rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.4rem;
+  --text-3xl: 2.8rem;
 
-  /* whight */
+  /* weight */
   --ligth-wgt: 300;
   --normal: 400;
   --semibold: 500;
   --bold: 700;
 
+  /* colors */
+  --color-primary: rgb(70,70,255);
+
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,9 @@
+.category_header {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.category_header h2 {
+  color: var(--color-primary);
+  font-size: var(--text-2xl);
+}
