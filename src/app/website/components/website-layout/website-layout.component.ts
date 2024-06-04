@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { BrowserStorageService } from '../../../services/browser-storage.service';
 import { TOKEN } from '../../../config/storage';
-import { AuthService } from '../../../auth/service/auth.service';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-website-layout',

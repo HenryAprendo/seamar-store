@@ -1,1 +1,32 @@
-<p>create-category works!</p>
+
+<form [formGroup]="createForm" class="form">
+
+  <header class="form_header">
+    <div class="form_header_content">
+      <h2 class="form_header_title">Create a new category</h2>
+      <!-- <span class="form_header_icon" class="material-symbols-outlined">person</span> -->
+    </div>
+  </header>
+
+  <div class="control">
+    <div class="control_content">
+      <label class="control_label" for="name">Category name</label>
+      <input class="control_input" id="name" name="name" type="name" placeholder="technology"
+        formControlName="name"
+        [class.valid]="nameField?.valid"
+        [class.invalid]="nameFieldInvalid"
+      >
+    </div>
+    @if(nameFieldInvalid) {
+      <div class="control_content_error">
+        @if(nameField?.hasError('required')) {
+          <p [class.error_message]="nameFieldInvalid" >Este campo es requerido</p>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form_content_button">
+    <button class="btn_submit" type="submit" [disabled]="createForm.invalid" >Register category</button>
+  </div>
+</form>

@@ -1,6 +1,6 @@
 import { Component, OnInit, WritableSignal, computed, inject, signal } from '@angular/core';
 import { Profile } from './../../auth/interfaces/profile.model';
-import { AuthService } from '../../auth/service/auth.service';
+import { AuthService } from '../../auth/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 

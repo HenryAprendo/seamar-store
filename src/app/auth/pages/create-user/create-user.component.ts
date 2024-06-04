@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 
-import { UserService } from '../../service/user.service';
+import { UserService } from '../../services/user.service';
 import { CreateUserDto } from '../../interfaces/user.model';
 import { Router, RouterLink } from '@angular/router';
 
