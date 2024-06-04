@@ -1,0 +1,40 @@
+<header>
+  <section class="menu">
+    <div class="menu_icon">
+      <span class="material-symbols-outlined">
+        view_list
+      </span>
+      <button class="menu_btn" (click)="toggleOpenMenu()" >
+        @if(openMenu()){
+          <span class="material-symbols-outlined">
+            arrow_drop_up
+          </span>
+        } @else {
+          <span class="material-symbols-outlined">
+            arrow_drop_down
+          </span>
+        }
+      </button>
+    </div>
+  </section>
+
+  @if(openMenu()){
+    <section class="menu_content">
+      <nav class="menu_nav">
+        <ul class="list_item">
+          <li class="items">
+            <a class="item_link">Categories</a>
+          </li>
+          <li class="items">
+            <a class="item_link">Products</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  }
+
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

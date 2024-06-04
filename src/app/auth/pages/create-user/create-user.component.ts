@@ -3,7 +3,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { UserService } from '../../service/user.service';
-import { CreateUserDto } from '../../interface/user.model';
+import { CreateUserDto } from '../../interfaces/user.model';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({

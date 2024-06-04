@@ -1,0 +1,60 @@
+
+.menu {
+  width: 6rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.menu_icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+
+.menu_btn {
+  background: transparent;
+  border: transparent;
+  padding: 0;
+}
+
+.menu_content {
+  width: 20rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.list_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.items {
+  padding: 1rem 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .menu_content {
+    width: 40rem;
+  }
+
+  .list_item {
+    flex-direction: row;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
