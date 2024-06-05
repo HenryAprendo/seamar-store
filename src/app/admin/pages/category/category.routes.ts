@@ -7,7 +7,7 @@ export default [
     children: [
       {
         path: '',
-        redirectTo: 'create',
+        redirectTo: 'edit/6',
         pathMatch: 'full'
       },
       {
@@ -19,7 +19,7 @@ export default [
         loadComponent: () => import('./create-category/create-category.component').then(m => m.CreateCategoryComponent)
       },
       {
-        path: 'edit',
+        path: 'edit/:id',
         loadComponent: () => import('./edit-category/edit-category.component').then(m => m.EditCategoryComponent)
       }
     ]

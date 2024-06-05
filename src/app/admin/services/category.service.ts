@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../../constant/constant';
-import { Category, CreateCategoryDTO } from './../interfaces/category.model';
+import { Category, CreateCategoryDTO, UpdateCategoryDTO } from './../interfaces/category.model';
 import { Observable, catchError } from 'rxjs';
 import { HandleErrorService } from '../../services/handle-error.service';
 
@@ -25,5 +25,25 @@ export class CategoryService {
       )
   }
 
+  update(id:number,body:UpdateCategoryDTO) {
+    return this.http.put(`${this.apiUrl}/edit/${id}`,{...body})
+      .pipe(
+        catchError(this.handle.handleErr())
+      )
+  }
+
+  findAll(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.apiUrl}`)
+      .pipe(
+        catchError(this.handle.handleErr())
+      )
+  }
+
+  findOne(id:number): Observable<Category> {
+    return this.http.get<Category>(`${this.apiUrl}/${id}`)
+      .pipe(
+        catchError(this.handle.handleErr())
+      )
+  }
 
 }
