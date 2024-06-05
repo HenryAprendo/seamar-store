@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Token } from '../interfaces/token.model';
 import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
 import { API_URL } from '../../constant/constant';

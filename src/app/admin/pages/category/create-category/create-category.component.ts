@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CategoryService } from './../../../services/category.service';
+import { CreateCategoryDTO } from '../../../interfaces/category.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-category',
@@ -11,9 +14,25 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class CreateCategoryComponent {
 
-  createForm = new FormGroup({
-    name: new FormControl('',[Validators.required]),
-  });
+  private router = inject(Router);
+
+  private fb = inject(FormBuilder);
+
+  private categoryService = inject(CategoryService);
+
+  createForm:FormGroup;
+
+  constructor(){
+    this.createForm = this.buildForm();
+  }
+
+  save() {
+    const data:CreateCategoryDTO = this.createForm.value;
+    if(this.createForm.valid) {
+      this.categoryService.create({ ...data })
+        .subscribe(() => this.router.navigate(['admin/category/list']));
+    }
+  }
 
   get nameField() {
     return this.createForm.get('name');
@@ -23,5 +42,18 @@ export class CreateCategoryComponent {
     return this.nameField?.invalid && this.nameField.touched;
   }
 
+  private buildForm() {
+    return this.fb.group({
+      name: ['',[Validators.required]]
+    });
+  }
+
 
 }
+
+
+
+
+
+
+
