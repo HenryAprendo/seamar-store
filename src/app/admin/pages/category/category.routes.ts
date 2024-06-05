@@ -7,7 +7,7 @@ export default [
     children: [
       {
         path: '',
-        redirectTo: 'edit/6',
+        redirectTo: 'list',
         pathMatch: 'full'
       },
       {

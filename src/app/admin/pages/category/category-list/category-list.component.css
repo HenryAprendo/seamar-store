@@ -1,0 +1,54 @@
+.btn_add {
+  height: 3.8rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: black;
+  border: transparent;
+}
+
+.btn_add:hover {
+  cursor: pointer;
+  background: blue;
+}
+
+.content_title {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.table {
+  width: 30rem;
+  border: 1px solid #d3d3d3;
+}
+
+.table_head_row th {
+  color: darkblue;
+}
+
+.table_head_row th, .item {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #d3d3d3;
+}
+
+.item_link {
+  cursor: pointer;
+}
+
+.icon_edit span:hover {
+  color: purple;
+}
+
+.icon_delete span:hover {
+  color:crimson;
+}
+
+
+
+
+
+
+
+
+

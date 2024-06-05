@@ -1,1 +1,46 @@
-<p>category-list works!</p>
+
+<section class="action_btn">
+  <button (click)="goToCreateForm()" class="btn_add">Add category</button>
+</section>
+
+<section class="content">
+  <div class="content_title">
+    <h2 class="title">List of categories</h2>
+  </div>
+  <div class="content_items">
+    <table class="table">
+      <thead class="table_head">
+        <tr class="table_head_row">
+          <th>Id</th>
+          <th>Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody class="table_body">
+        @for(item of categories(); track item.id){
+          <tr class="table_body_row">
+            <td class="item">{{item.id}}</td>
+            <td class="item">{{item.name}}</td>
+            <td class="item">
+              <a class="item_link icon_edit" [routerLink]="['./../edit', item.id]">
+                <span class="material-symbols-outlined">
+                  edit
+                </span>
+              </a>
+            </td>
+            <td class="item">
+              <a class="item_link icon_delete">
+                <span class="material-symbols-outlined">
+                  delete
+                </span>
+              </a>
+            </td>
+          </tr>
+          }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- font-size: var(--text-lg); -->
