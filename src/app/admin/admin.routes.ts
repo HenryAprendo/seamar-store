@@ -13,6 +13,10 @@ export default [
       {
         path: 'category',
         loadChildren: () => import('./pages/category/category.routes')
+      },
+      {
+        path: 'product',
+        loadChildren: () => import('./pages/product/product.routes')
       }
     ]
   },
