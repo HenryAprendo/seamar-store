@@ -16,10 +16,6 @@
 }
 
 .control {
-  /* border-bottom: 1px; */
-  /* border-style: solid; */
-  /* border-color: navy; */
-
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
@@ -53,6 +49,34 @@
   font-size: var(--text-base);
   padding: 1rem;
 }
+
+/* File */
+/* .input_control_file {} */
+
+.file {
+  height: 10rem;
+  padding: 1rem;
+}
+
+.file_label {
+  display: block;
+  font-size: var(--text-sm);
+  letter-spacing: 0.1rem;
+  color: #101010;
+  font-weight: var(--semibold);
+  margin-bottom: 0.5rem;
+}
+
+.file_input {
+  height: 6rem;
+  width: 100%;
+  border: transparent;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: red;
+  box-shadow: 0.3rem 0.3rem 1rem rgb(0, 0, 0, 0.2);
+}
+
 
 /* Errores */
 .control_content_error {
