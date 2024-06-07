@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { API_URL } from '../../constant/constant';
+import { API_URL } from '../../constants/constant';
 import { Category, CreateCategoryDTO, UpdateCategoryDTO } from './../interfaces/category.model';
 import { Observable, catchError } from 'rxjs';
 import { HandleErrorService } from '../../services/handle-error.service';

@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Token } from '../interfaces/token.model';
 import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
-import { API_URL } from '../../constant/constant';
+import { API_URL } from '../../constants/constant';
 import { BrowserStorageService } from '../../services/browser-storage.service';
 import { TOKEN } from '../../config/storage';
 import { HandleErrorService } from '../../services/handle-error.service';

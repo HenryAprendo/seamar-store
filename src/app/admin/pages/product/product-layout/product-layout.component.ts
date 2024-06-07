@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-product-layout',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './product-layout.component.html',
   styleUrl: './product-layout.component.css'
 })

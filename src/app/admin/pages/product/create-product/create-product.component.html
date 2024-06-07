@@ -1,0 +1,114 @@
+<div class="container">
+
+  <header class="topHead">
+    <div class="head_box">
+      <h2 class="head_title">Insert a product</h2>
+    </div>
+  </header>
+
+  <form [formGroup]="createForm" class="form">
+    <div class="inputs">
+
+      <section class="input_control">
+
+        <div class="control" >
+          <div class="control_content">
+            <label for="title" class="control_label">Title</label>
+            <input type="text" id="title" name="title" class="control_input" formControlName="title" >
+          </div>
+          @if(getfieldInvalid('title')){
+            <div class="control_content_error">
+              @if(titleField?.hasError('required')){
+                <p>This field is required</p>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="control" >
+          <div class="control_content">
+            <label for="description" class="control_label">Description</label>
+            <textarea type="text" rows="10" cols="30" id="description" name="description" class="control_textarea" formControlName="description" ></textarea>
+          </div>
+          @if(getfieldInvalid('description')){
+            <div class="control_content_error">
+              @if(descriptionField?.hasError('required')){
+                <p>This field is required</p>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="control" >
+          <div class="control_content">
+            <label for="price" class="control_label">Price</label>
+            <input type="number" id="price" name="price" class="control_input" formControlName="price" >
+          </div>
+          @if(getfieldInvalid('price')){
+            <div class="control_content_error">
+              @if(priceField?.hasError('required')){
+                <p>This field is required</p>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="control" >
+          <div class="control_content">
+            <label for="quantity" class="control_label">Quantity available</label>
+            <input type="number" id="quantity" name="quantity" class="control_input" formControlName="quantity_available" >
+          </div>
+          @if(getfieldInvalid('quantity_available')){
+            <div class="control_content_error">
+              @if(quantityAvailableField?.hasError('required')){
+                <p>This field is required</p>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="control" >
+          <div class="control_content">
+            <label for="category" class="control_label">Category</label>
+            <select id="category" name="category" class="control_input control_select" formControlName="categoryId" >
+              @for(category of categories(); track category.id ){
+                <option class="control_option" [value]="category.id">
+                  {{category.name}}
+                </option>
+              }
+            </select>
+          </div>
+          @if(getfieldInvalid('categoryId')){
+            <div class="control_content_error">
+              @if(categoryIdField?.hasError('required')){
+                <p>This field is required</p>
+              }
+            </div>
+          }
+        </div>
+
+      </section>
+
+      <section class="input_control_file">
+        <div class="file" >
+          <div class="file_content">
+            <label for="image" class="file_label">Image</label>
+            <input type="file" id="image" name="image" class="file_input" formControlName="image" >
+          </div>
+          @if(getfieldInvalid('image')){
+            <div class="file_content_error">
+              @if(imageField?.hasError('required')){
+                <p>This field is required</p>
+              }
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+
+    <div class="content_btn">
+      <button type="submit" class="btn_submit" >Register</button>
+    </div>
+  </form>
+
+</div>

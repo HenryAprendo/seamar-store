@@ -7,7 +7,7 @@ export default [
     children: [
       {
         path: '',
-        redirectTo: 'category',
+        redirectTo: 'product',
         pathMatch: 'full'
       },
       {
