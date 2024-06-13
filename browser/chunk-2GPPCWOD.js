@@ -1,0 +1,1 @@
+import"./chunk-2XJVAMHT.js";var o=[{path:"",loadComponent:()=>import("./chunk-23LFG2SM.js").then(t=>t.AdminLayoutComponent),children:[{path:"",redirectTo:"product",pathMatch:"full"},{path:"category",loadChildren:()=>import("./chunk-ROMEU7IY.js")},{path:"product",loadChildren:()=>import("./chunk-FPA4WDV3.js")}]}];export{o as default};
